@@ -136,8 +136,8 @@ typedef void(^RKObjectLoaderDidLoadObjectsDictionaryBlock)(NSDictionary *diction
  * includes Core Data specific mapping logic.
  */
 @interface RKObjectLoader : RKRequest {
-    id _sourceObject;
-    id _targetObject;
+    NSObject* _sourceObject;    // Was declared as an 'id', but LLDB complains. See property definition below.
+    NSObject* _targetObject;    // Was declared as an 'id', but LLDB complains. See property definition below.
     dispatch_queue_t _mappingQueue;
 }
 
